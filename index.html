@@ -233,33 +233,33 @@
      function ready(error, us, congress) {
        if (error) throw error;
 
-       var geometryCollection = congress.objects.districts,
-           featureCollection = topojson.feature(congress, geometryCollection),
-           features = featureCollection.features,
-           neighbors = topojson.neighbors(geometryCollection.geometries);
+    //    var geometryCollection = congress.objects.districts,
+    //        featureCollection = topojson.feature(congress, geometryCollection),
+    //        features = featureCollection.features,
+    //        neighbors = topojson.neighbors(geometryCollection.geometries);
 
-       features.forEach(function(feature, i) {
-         feature.centroid = path.centroid(feature);
-         if (feature.centroid.some(isNaN)) feature.centroid = null; // off the map
-         feature.neighbors = feature.centroid ? neighbors[i]
-             .filter(function(j) { return j < i && features[j].centroid; })
-             .map(function(j) { return features[j]; }) : [];
-       });
+    //    features.forEach(function(feature, i) {
+    //      feature.centroid = path.centroid(feature);
+    //      if (feature.centroid.some(isNaN)) feature.centroid = null; // off the map
+    //      feature.neighbors = feature.centroid ? neighbors[i]
+    //          .filter(function(j) { return j < i && features[j].centroid; })
+    //          .map(function(j) { return features[j]; }) : [];
+    //    });
 
        svg.append("path")
            .attr("class", "land")
            .datum(topojson.feature(us, us.objects.land))
            .attr("d", path);
 
-       svg.append("path")
-           .attr("class", "border")
-           .datum(topojson.mesh(congress, geometryCollection, function(a, b) { return a !== b; }))
-           .attr("d", path);
+    //    svg.append("path")
+    //        .attr("class", "border")
+    //        .datum(topojson.mesh(congress, geometryCollection, function(a, b) { return a !== b; }))
+    //        .attr("d", path);
 
-       svg.append("path")
-           .attr("class", "graph")
-           .datum(d3.merge(features.map(function(a) { return a.neighbors.map(function(b) { return [a, b]; }); })))
-           .attr("d", function(d) { return d.map(function(l) { return "M" + l[0].centroid + "L" + l[1].centroid; }).join(""); });
+    //    svg.append("path")
+    //        .attr("class", "graph")
+    //        .datum(d3.merge(features.map(function(a) { return a.neighbors.map(function(b) { return [a, b]; }); })))
+    //        .attr("d", function(d) { return d.map(function(l) { return "M" + l[0].centroid + "L" + l[1].centroid; }).join(""); });
      }
 
  </script>
