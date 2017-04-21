@@ -290,7 +290,7 @@
        .on("mouseover", function() { this.style.stroke = "black"; })
        .on("mouseout", function() { this.style.stroke = "none"; })
        .call(d3.drag()
-         .on("dragstart", function() {
+         .on("start", function() {
            var feature = d3.event.sourceEvent.target.__data__;
            if (assign(feature, dragColor = feature.color === selectedColor ? null : selectedColor)) redraw();
          }
