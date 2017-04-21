@@ -224,7 +224,7 @@
      .attr("height", height);
 
      d3.queue()
-         .defer(d3.json, "/Users/ajonnav/Documents/workspace/ajonnav.github.io/mapdata/us2016.topo.json")
+         .defer(d3.json, "./mapdata/us2016.topo.json")
          .defer(d3.json, "./mapdata/congress.topo.json")
          .await(ready);
 
