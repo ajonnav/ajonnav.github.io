@@ -1,0 +1,723 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'topojson' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData topojson
+8 silly fetchNamedPackageData topojson
+9 silly mapToRegistry name topojson
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'topojson',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'topojson',
+12 silly mapToRegistry   name: 'topojson',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/topojson
+14 verbose request uri https://registry.npmjs.org/topojson
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 11:31:32 AM
+17 verbose request id 8b95c1b5466dad92
+18 http request GET https://registry.npmjs.org/topojson
+19 http 200 https://registry.npmjs.org/topojson
+20 verbose headers { server: 'nginx/1.10.1',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'last-modified': 'Fri, 31 Mar 2017 05:53:51 GMT',
+20 verbose headers   etag: 'W/"58ddeeef-1eac3"',
+20 verbose headers   'content-encoding': 'gzip',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '11679',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Fri, 21 Apr 2017 15:31:32 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-dfw1838-DFW',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1492788693.914543,VS0,VE33',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 200,
+21 silly get   { server: 'nginx/1.10.1',
+21 silly get     'content-type': 'application/json',
+21 silly get     'last-modified': 'Fri, 31 Mar 2017 05:53:51 GMT',
+21 silly get     etag: 'W/"58ddeeef-1eac3"',
+21 silly get     'content-encoding': 'gzip',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '11679',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Fri, 21 Apr 2017 15:31:32 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '0',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-dfw1838-DFW',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1492788693.914543,VS0,VE33',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose get saving topojson to /Users/ajonnav/.npm/registry.npmjs.org/topojson/.cache.json
+23 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule topojson@3.0.0 checking installable status
+37 silly cache add args [ 'topojson', null ]
+38 verbose cache add spec topojson
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'topojson',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'topojson',
+39 silly cache add   name: 'topojson',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed topojson@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for topojson
+42 info addNameTag [ 'topojson', 'latest' ]
+43 silly mapToRegistry name topojson
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'topojson',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'topojson',
+46 silly mapToRegistry   name: 'topojson',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/topojson
+48 verbose addNameTag registry:https://registry.npmjs.org/topojson not in flight; fetching
+49 verbose get https://registry.npmjs.org/topojson not expired, no request
+50 silly addNameTag next cb for topojson with tag latest
+51 silly addNamed topojson@3.0.0
+52 verbose addNamed "3.0.0" is a plain semver version for topojson
+53 silly mapToRegistry name topojson
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'topojson',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   escapedName: 'topojson',
+56 silly mapToRegistry   name: 'topojson',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npmjs.org/topojson
+58 verbose addRemoteTarball https://registry.npmjs.org/topojson/-/topojson-3.0.0.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npmjs.org/topojson/-/topojson-3.0.0.tgz',
+59 verbose addRemoteTarball   'c2aca1b76435e801dce3f229586bbd5767115ce3' ]
+60 info retry fetch attempt 1 at 11:31:33 AM
+61 info attempt registry request try #1 at 11:31:33 AM
+62 http fetch GET https://registry.npmjs.org/topojson/-/topojson-3.0.0.tgz
+63 http fetch 200 https://registry.npmjs.org/topojson/-/topojson-3.0.0.tgz
+64 silly fetchAndShaCheck shasum c2aca1b76435e801dce3f229586bbd5767115ce3
+65 verbose addTmpTarball /var/folders/0z/gx7574p95195_8g54lfnmx_40000gn/T/npm-5250-34035534/registry.npmjs.org/topojson/-/topojson-3.0.0.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for topojson@3.0.0
+67 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+68 silly cache afterAdd topojson@3.0.0
+69 verbose afterAdd /Users/ajonnav/.npm/topojson/3.0.0/package/package.json not in flight; writing
+70 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+71 verbose afterAdd /Users/ajonnav/.npm/topojson/3.0.0/package/package.json written
+72 silly fetchNamedPackageData topojson-client
+73 silly mapToRegistry name topojson-client
+74 silly mapToRegistry using default registry
+75 silly mapToRegistry registry https://registry.npmjs.org/
+76 silly mapToRegistry data Result {
+76 silly mapToRegistry   raw: 'topojson-client',
+76 silly mapToRegistry   scope: null,
+76 silly mapToRegistry   escapedName: 'topojson-client',
+76 silly mapToRegistry   name: 'topojson-client',
+76 silly mapToRegistry   rawSpec: '',
+76 silly mapToRegistry   spec: 'latest',
+76 silly mapToRegistry   type: 'tag' }
+77 silly mapToRegistry uri https://registry.npmjs.org/topojson-client
+78 silly fetchNamedPackageData topojson-server
+79 silly mapToRegistry name topojson-server
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npmjs.org/
+82 silly mapToRegistry data Result {
+82 silly mapToRegistry   raw: 'topojson-server',
+82 silly mapToRegistry   scope: null,
+82 silly mapToRegistry   escapedName: 'topojson-server',
+82 silly mapToRegistry   name: 'topojson-server',
+82 silly mapToRegistry   rawSpec: '',
+82 silly mapToRegistry   spec: 'latest',
+82 silly mapToRegistry   type: 'tag' }
+83 silly mapToRegistry uri https://registry.npmjs.org/topojson-server
+84 silly fetchNamedPackageData topojson-simplify
+85 silly mapToRegistry name topojson-simplify
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry data Result {
+88 silly mapToRegistry   raw: 'topojson-simplify',
+88 silly mapToRegistry   scope: null,
+88 silly mapToRegistry   escapedName: 'topojson-simplify',
+88 silly mapToRegistry   name: 'topojson-simplify',
+88 silly mapToRegistry   rawSpec: '',
+88 silly mapToRegistry   spec: 'latest',
+88 silly mapToRegistry   type: 'tag' }
+89 silly mapToRegistry uri https://registry.npmjs.org/topojson-simplify
+90 verbose request uri https://registry.npmjs.org/topojson-client
+91 verbose request no auth needed
+92 info attempt registry request try #1 at 11:31:33 AM
+93 http request GET https://registry.npmjs.org/topojson-client
+94 verbose request uri https://registry.npmjs.org/topojson-server
+95 verbose request no auth needed
+96 info attempt registry request try #1 at 11:31:33 AM
+97 http request GET https://registry.npmjs.org/topojson-server
+98 verbose request uri https://registry.npmjs.org/topojson-simplify
+99 verbose request no auth needed
+100 info attempt registry request try #1 at 11:31:33 AM
+101 http request GET https://registry.npmjs.org/topojson-simplify
+102 http 200 https://registry.npmjs.org/topojson-simplify
+103 verbose headers { server: 'nginx/1.10.1',
+103 verbose headers   'content-type': 'application/json',
+103 verbose headers   'last-modified': 'Sat, 15 Apr 2017 22:13:21 GMT',
+103 verbose headers   etag: 'W/"58f29b01-5402"',
+103 verbose headers   'content-encoding': 'gzip',
+103 verbose headers   'cache-control': 'max-age=300',
+103 verbose headers   'content-length': '4686',
+103 verbose headers   'accept-ranges': 'bytes',
+103 verbose headers   date: 'Fri, 21 Apr 2017 15:31:33 GMT',
+103 verbose headers   via: '1.1 varnish',
+103 verbose headers   age: '0',
+103 verbose headers   connection: 'keep-alive',
+103 verbose headers   'x-served-by': 'cache-dfw1836-DFW',
+103 verbose headers   'x-cache': 'MISS',
+103 verbose headers   'x-cache-hits': '0',
+103 verbose headers   'x-timer': 'S1492788693.339560,VS0,VE34',
+103 verbose headers   vary: 'Accept-Encoding' }
+104 silly get cb [ 200,
+104 silly get   { server: 'nginx/1.10.1',
+104 silly get     'content-type': 'application/json',
+104 silly get     'last-modified': 'Sat, 15 Apr 2017 22:13:21 GMT',
+104 silly get     etag: 'W/"58f29b01-5402"',
+104 silly get     'content-encoding': 'gzip',
+104 silly get     'cache-control': 'max-age=300',
+104 silly get     'content-length': '4686',
+104 silly get     'accept-ranges': 'bytes',
+104 silly get     date: 'Fri, 21 Apr 2017 15:31:33 GMT',
+104 silly get     via: '1.1 varnish',
+104 silly get     age: '0',
+104 silly get     connection: 'keep-alive',
+104 silly get     'x-served-by': 'cache-dfw1836-DFW',
+104 silly get     'x-cache': 'MISS',
+104 silly get     'x-cache-hits': '0',
+104 silly get     'x-timer': 'S1492788693.339560,VS0,VE34',
+104 silly get     vary: 'Accept-Encoding' } ]
+105 verbose get saving topojson-simplify to /Users/ajonnav/.npm/registry.npmjs.org/topojson-simplify/.cache.json
+106 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+107 http 200 https://registry.npmjs.org/topojson-client
+108 verbose headers { server: 'nginx/1.10.1',
+108 verbose headers   'content-type': 'application/json',
+108 verbose headers   'last-modified': 'Fri, 31 Mar 2017 05:06:36 GMT',
+108 verbose headers   etag: 'W/"58dde3dc-7d14"',
+108 verbose headers   'content-encoding': 'gzip',
+108 verbose headers   'cache-control': 'max-age=300',
+108 verbose headers   'content-length': '6614',
+108 verbose headers   'accept-ranges': 'bytes',
+108 verbose headers   date: 'Fri, 21 Apr 2017 15:31:33 GMT',
+108 verbose headers   via: '1.1 varnish',
+108 verbose headers   age: '0',
+108 verbose headers   connection: 'keep-alive',
+108 verbose headers   'x-served-by': 'cache-dfw1838-DFW',
+108 verbose headers   'x-cache': 'HIT',
+108 verbose headers   'x-cache-hits': '1',
+108 verbose headers   'x-timer': 'S1492788693.251652,VS0,VE34',
+108 verbose headers   vary: 'Accept-Encoding' }
+109 silly get cb [ 200,
+109 silly get   { server: 'nginx/1.10.1',
+109 silly get     'content-type': 'application/json',
+109 silly get     'last-modified': 'Fri, 31 Mar 2017 05:06:36 GMT',
+109 silly get     etag: 'W/"58dde3dc-7d14"',
+109 silly get     'content-encoding': 'gzip',
+109 silly get     'cache-control': 'max-age=300',
+109 silly get     'content-length': '6614',
+109 silly get     'accept-ranges': 'bytes',
+109 silly get     date: 'Fri, 21 Apr 2017 15:31:33 GMT',
+109 silly get     via: '1.1 varnish',
+109 silly get     age: '0',
+109 silly get     connection: 'keep-alive',
+109 silly get     'x-served-by': 'cache-dfw1838-DFW',
+109 silly get     'x-cache': 'HIT',
+109 silly get     'x-cache-hits': '1',
+109 silly get     'x-timer': 'S1492788693.251652,VS0,VE34',
+109 silly get     vary: 'Accept-Encoding' } ]
+110 verbose get saving topojson-client to /Users/ajonnav/.npm/registry.npmjs.org/topojson-client/.cache.json
+111 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+112 silly resolveWithNewModule topojson-simplify@3.0.0 checking installable status
+113 silly cache add args [ 'topojson-simplify@3.0.0', null ]
+114 verbose cache add spec topojson-simplify@3.0.0
+115 silly cache add parsed spec Result {
+115 silly cache add   raw: 'topojson-simplify@3.0.0',
+115 silly cache add   scope: null,
+115 silly cache add   escapedName: 'topojson-simplify',
+115 silly cache add   name: 'topojson-simplify',
+115 silly cache add   rawSpec: '3.0.0',
+115 silly cache add   spec: '3.0.0',
+115 silly cache add   type: 'version' }
+116 silly addNamed topojson-simplify@3.0.0
+117 verbose addNamed "3.0.0" is a plain semver version for topojson-simplify
+118 silly mapToRegistry name topojson-simplify
+119 silly mapToRegistry using default registry
+120 silly mapToRegistry registry https://registry.npmjs.org/
+121 silly mapToRegistry data Result {
+121 silly mapToRegistry   raw: 'topojson-simplify',
+121 silly mapToRegistry   scope: null,
+121 silly mapToRegistry   escapedName: 'topojson-simplify',
+121 silly mapToRegistry   name: 'topojson-simplify',
+121 silly mapToRegistry   rawSpec: '',
+121 silly mapToRegistry   spec: 'latest',
+121 silly mapToRegistry   type: 'tag' }
+122 silly mapToRegistry uri https://registry.npmjs.org/topojson-simplify
+123 verbose addNameVersion registry:https://registry.npmjs.org/topojson-simplify not in flight; fetching
+124 verbose get https://registry.npmjs.org/topojson-simplify not expired, no request
+125 silly mapToRegistry name topojson-simplify
+126 silly mapToRegistry using default registry
+127 silly mapToRegistry registry https://registry.npmjs.org/
+128 silly mapToRegistry data Result {
+128 silly mapToRegistry   raw: 'topojson-simplify',
+128 silly mapToRegistry   scope: null,
+128 silly mapToRegistry   escapedName: 'topojson-simplify',
+128 silly mapToRegistry   name: 'topojson-simplify',
+128 silly mapToRegistry   rawSpec: '',
+128 silly mapToRegistry   spec: 'latest',
+128 silly mapToRegistry   type: 'tag' }
+129 silly mapToRegistry uri https://registry.npmjs.org/topojson-simplify
+130 verbose addRemoteTarball https://registry.npmjs.org/topojson-simplify/-/topojson-simplify-3.0.0.tgz not in flight; adding
+131 verbose addRemoteTarball [ 'https://registry.npmjs.org/topojson-simplify/-/topojson-simplify-3.0.0.tgz',
+131 verbose addRemoteTarball   '58527d26ca85bd8589b5800f6c10e93885245ae5' ]
+132 silly resolveWithNewModule topojson-client@3.0.0 checking installable status
+133 silly cache add args [ 'topojson-client@3.0.0', null ]
+134 verbose cache add spec topojson-client@3.0.0
+135 silly cache add parsed spec Result {
+135 silly cache add   raw: 'topojson-client@3.0.0',
+135 silly cache add   scope: null,
+135 silly cache add   escapedName: 'topojson-client',
+135 silly cache add   name: 'topojson-client',
+135 silly cache add   rawSpec: '3.0.0',
+135 silly cache add   spec: '3.0.0',
+135 silly cache add   type: 'version' }
+136 silly addNamed topojson-client@3.0.0
+137 verbose addNamed "3.0.0" is a plain semver version for topojson-client
+138 silly mapToRegistry name topojson-client
+139 silly mapToRegistry using default registry
+140 silly mapToRegistry registry https://registry.npmjs.org/
+141 silly mapToRegistry data Result {
+141 silly mapToRegistry   raw: 'topojson-client',
+141 silly mapToRegistry   scope: null,
+141 silly mapToRegistry   escapedName: 'topojson-client',
+141 silly mapToRegistry   name: 'topojson-client',
+141 silly mapToRegistry   rawSpec: '',
+141 silly mapToRegistry   spec: 'latest',
+141 silly mapToRegistry   type: 'tag' }
+142 silly mapToRegistry uri https://registry.npmjs.org/topojson-client
+143 verbose addNameVersion registry:https://registry.npmjs.org/topojson-client not in flight; fetching
+144 info retry fetch attempt 1 at 11:31:33 AM
+145 info attempt registry request try #1 at 11:31:33 AM
+146 http fetch GET https://registry.npmjs.org/topojson-simplify/-/topojson-simplify-3.0.0.tgz
+147 verbose get https://registry.npmjs.org/topojson-client not expired, no request
+148 silly mapToRegistry name topojson-client
+149 silly mapToRegistry using default registry
+150 silly mapToRegistry registry https://registry.npmjs.org/
+151 silly mapToRegistry data Result {
+151 silly mapToRegistry   raw: 'topojson-client',
+151 silly mapToRegistry   scope: null,
+151 silly mapToRegistry   escapedName: 'topojson-client',
+151 silly mapToRegistry   name: 'topojson-client',
+151 silly mapToRegistry   rawSpec: '',
+151 silly mapToRegistry   spec: 'latest',
+151 silly mapToRegistry   type: 'tag' }
+152 silly mapToRegistry uri https://registry.npmjs.org/topojson-client
+153 verbose addRemoteTarball https://registry.npmjs.org/topojson-client/-/topojson-client-3.0.0.tgz not in flight; adding
+154 verbose addRemoteTarball [ 'https://registry.npmjs.org/topojson-client/-/topojson-client-3.0.0.tgz',
+154 verbose addRemoteTarball   '1f99293a77ef42a448d032a81aa982b73f360d2f' ]
+155 info retry fetch attempt 1 at 11:31:33 AM
+156 info attempt registry request try #1 at 11:31:33 AM
+157 http fetch GET https://registry.npmjs.org/topojson-client/-/topojson-client-3.0.0.tgz
+158 http fetch 200 https://registry.npmjs.org/topojson-simplify/-/topojson-simplify-3.0.0.tgz
+159 silly fetchAndShaCheck shasum 58527d26ca85bd8589b5800f6c10e93885245ae5
+160 verbose addTmpTarball /var/folders/0z/gx7574p95195_8g54lfnmx_40000gn/T/npm-5250-34035534/registry.npmjs.org/topojson-simplify/-/topojson-simplify-3.0.0.tgz not in flight; adding
+161 verbose addTmpTarball already have metadata; skipping unpack for topojson-simplify@3.0.0
+162 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+163 silly cache afterAdd topojson-simplify@3.0.0
+164 verbose afterAdd /Users/ajonnav/.npm/topojson-simplify/3.0.0/package/package.json not in flight; writing
+165 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+166 verbose afterAdd /Users/ajonnav/.npm/topojson-simplify/3.0.0/package/package.json written
+167 http fetch 200 https://registry.npmjs.org/topojson-client/-/topojson-client-3.0.0.tgz
+168 http 200 https://registry.npmjs.org/topojson-server
+169 verbose headers { server: 'nginx/1.10.1',
+169 verbose headers   'content-type': 'application/json',
+169 verbose headers   'last-modified': 'Fri, 31 Mar 2017 05:15:13 GMT',
+169 verbose headers   etag: 'W/"58dde5e1-260d"',
+169 verbose headers   'content-encoding': 'gzip',
+169 verbose headers   'cache-control': 'max-age=300',
+169 verbose headers   'content-length': '2945',
+169 verbose headers   'accept-ranges': 'bytes',
+169 verbose headers   date: 'Fri, 21 Apr 2017 15:31:33 GMT',
+169 verbose headers   via: '1.1 varnish',
+169 verbose headers   age: '0',
+169 verbose headers   connection: 'keep-alive',
+169 verbose headers   'x-served-by': 'cache-dfw1838-DFW',
+169 verbose headers   'x-cache': 'MISS',
+169 verbose headers   'x-cache-hits': '0',
+169 verbose headers   'x-timer': 'S1492788693.336107,VS0,VE210',
+169 verbose headers   vary: 'Accept-Encoding' }
+170 silly get cb [ 200,
+170 silly get   { server: 'nginx/1.10.1',
+170 silly get     'content-type': 'application/json',
+170 silly get     'last-modified': 'Fri, 31 Mar 2017 05:15:13 GMT',
+170 silly get     etag: 'W/"58dde5e1-260d"',
+170 silly get     'content-encoding': 'gzip',
+170 silly get     'cache-control': 'max-age=300',
+170 silly get     'content-length': '2945',
+170 silly get     'accept-ranges': 'bytes',
+170 silly get     date: 'Fri, 21 Apr 2017 15:31:33 GMT',
+170 silly get     via: '1.1 varnish',
+170 silly get     age: '0',
+170 silly get     connection: 'keep-alive',
+170 silly get     'x-served-by': 'cache-dfw1838-DFW',
+170 silly get     'x-cache': 'MISS',
+170 silly get     'x-cache-hits': '0',
+170 silly get     'x-timer': 'S1492788693.336107,VS0,VE210',
+170 silly get     vary: 'Accept-Encoding' } ]
+171 verbose get saving topojson-server to /Users/ajonnav/.npm/registry.npmjs.org/topojson-server/.cache.json
+172 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+173 silly fetchAndShaCheck shasum 1f99293a77ef42a448d032a81aa982b73f360d2f
+174 verbose addTmpTarball /var/folders/0z/gx7574p95195_8g54lfnmx_40000gn/T/npm-5250-34035534/registry.npmjs.org/topojson-client/-/topojson-client-3.0.0.tgz not in flight; adding
+175 verbose addTmpTarball already have metadata; skipping unpack for topojson-client@3.0.0
+176 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+177 silly resolveWithNewModule topojson-server@3.0.0 checking installable status
+178 silly cache add args [ 'topojson-server@3.0.0', null ]
+179 verbose cache add spec topojson-server@3.0.0
+180 silly cache add parsed spec Result {
+180 silly cache add   raw: 'topojson-server@3.0.0',
+180 silly cache add   scope: null,
+180 silly cache add   escapedName: 'topojson-server',
+180 silly cache add   name: 'topojson-server',
+180 silly cache add   rawSpec: '3.0.0',
+180 silly cache add   spec: '3.0.0',
+180 silly cache add   type: 'version' }
+181 silly addNamed topojson-server@3.0.0
+182 verbose addNamed "3.0.0" is a plain semver version for topojson-server
+183 silly mapToRegistry name topojson-server
+184 silly mapToRegistry using default registry
+185 silly mapToRegistry registry https://registry.npmjs.org/
+186 silly mapToRegistry data Result {
+186 silly mapToRegistry   raw: 'topojson-server',
+186 silly mapToRegistry   scope: null,
+186 silly mapToRegistry   escapedName: 'topojson-server',
+186 silly mapToRegistry   name: 'topojson-server',
+186 silly mapToRegistry   rawSpec: '',
+186 silly mapToRegistry   spec: 'latest',
+186 silly mapToRegistry   type: 'tag' }
+187 silly mapToRegistry uri https://registry.npmjs.org/topojson-server
+188 verbose addNameVersion registry:https://registry.npmjs.org/topojson-server not in flight; fetching
+189 verbose get https://registry.npmjs.org/topojson-server not expired, no request
+190 silly mapToRegistry name topojson-server
+191 silly mapToRegistry using default registry
+192 silly mapToRegistry registry https://registry.npmjs.org/
+193 silly mapToRegistry data Result {
+193 silly mapToRegistry   raw: 'topojson-server',
+193 silly mapToRegistry   scope: null,
+193 silly mapToRegistry   escapedName: 'topojson-server',
+193 silly mapToRegistry   name: 'topojson-server',
+193 silly mapToRegistry   rawSpec: '',
+193 silly mapToRegistry   spec: 'latest',
+193 silly mapToRegistry   type: 'tag' }
+194 silly mapToRegistry uri https://registry.npmjs.org/topojson-server
+195 verbose addRemoteTarball https://registry.npmjs.org/topojson-server/-/topojson-server-3.0.0.tgz not in flight; adding
+196 verbose addRemoteTarball [ 'https://registry.npmjs.org/topojson-server/-/topojson-server-3.0.0.tgz',
+196 verbose addRemoteTarball   '378e78e87c3972a7b5be2c5d604369b6bae69c5e' ]
+197 info retry fetch attempt 1 at 11:31:33 AM
+198 info attempt registry request try #1 at 11:31:33 AM
+199 http fetch GET https://registry.npmjs.org/topojson-server/-/topojson-server-3.0.0.tgz
+200 silly cache afterAdd topojson-client@3.0.0
+201 verbose afterAdd /Users/ajonnav/.npm/topojson-client/3.0.0/package/package.json not in flight; writing
+202 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+203 verbose afterAdd /Users/ajonnav/.npm/topojson-client/3.0.0/package/package.json written
+204 http fetch 200 https://registry.npmjs.org/topojson-server/-/topojson-server-3.0.0.tgz
+205 silly fetchAndShaCheck shasum 378e78e87c3972a7b5be2c5d604369b6bae69c5e
+206 verbose addTmpTarball /var/folders/0z/gx7574p95195_8g54lfnmx_40000gn/T/npm-5250-34035534/registry.npmjs.org/topojson-server/-/topojson-server-3.0.0.tgz not in flight; adding
+207 verbose addTmpTarball already have metadata; skipping unpack for topojson-server@3.0.0
+208 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+209 silly cache afterAdd topojson-server@3.0.0
+210 verbose afterAdd /Users/ajonnav/.npm/topojson-server/3.0.0/package/package.json not in flight; writing
+211 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+212 verbose afterAdd /Users/ajonnav/.npm/topojson-server/3.0.0/package/package.json written
+213 silly fetchNamedPackageData commander
+214 silly mapToRegistry name commander
+215 silly mapToRegistry using default registry
+216 silly mapToRegistry registry https://registry.npmjs.org/
+217 silly mapToRegistry data Result {
+217 silly mapToRegistry   raw: 'commander',
+217 silly mapToRegistry   scope: null,
+217 silly mapToRegistry   escapedName: 'commander',
+217 silly mapToRegistry   name: 'commander',
+217 silly mapToRegistry   rawSpec: '',
+217 silly mapToRegistry   spec: 'latest',
+217 silly mapToRegistry   type: 'tag' }
+218 silly mapToRegistry uri https://registry.npmjs.org/commander
+219 verbose request uri https://registry.npmjs.org/commander
+220 verbose request no auth needed
+221 info attempt registry request try #1 at 11:31:33 AM
+222 verbose etag W/"58e20d4e-1019e"
+223 verbose lastModified Mon, 03 Apr 2017 08:52:30 GMT
+224 http request GET https://registry.npmjs.org/commander
+225 http 200 https://registry.npmjs.org/commander
+226 verbose headers { server: 'nginx/1.10.1',
+226 verbose headers   'content-type': 'application/json',
+226 verbose headers   'last-modified': 'Fri, 21 Apr 2017 13:16:23 GMT',
+226 verbose headers   etag: 'W/"58fa0627-10289"',
+226 verbose headers   'content-encoding': 'gzip',
+226 verbose headers   'cache-control': 'max-age=300',
+226 verbose headers   'content-length': '12937',
+226 verbose headers   'accept-ranges': 'bytes',
+226 verbose headers   date: 'Fri, 21 Apr 2017 15:31:33 GMT',
+226 verbose headers   via: '1.1 varnish',
+226 verbose headers   age: '286',
+226 verbose headers   connection: 'keep-alive',
+226 verbose headers   'x-served-by': 'cache-dfw1838-DFW',
+226 verbose headers   'x-cache': 'HIT',
+226 verbose headers   'x-cache-hits': '15',
+226 verbose headers   'x-timer': 'S1492788694.900451,VS0,VE0',
+226 verbose headers   vary: 'Accept-Encoding' }
+227 silly get cb [ 200,
+227 silly get   { server: 'nginx/1.10.1',
+227 silly get     'content-type': 'application/json',
+227 silly get     'last-modified': 'Fri, 21 Apr 2017 13:16:23 GMT',
+227 silly get     etag: 'W/"58fa0627-10289"',
+227 silly get     'content-encoding': 'gzip',
+227 silly get     'cache-control': 'max-age=300',
+227 silly get     'content-length': '12937',
+227 silly get     'accept-ranges': 'bytes',
+227 silly get     date: 'Fri, 21 Apr 2017 15:31:33 GMT',
+227 silly get     via: '1.1 varnish',
+227 silly get     age: '286',
+227 silly get     connection: 'keep-alive',
+227 silly get     'x-served-by': 'cache-dfw1838-DFW',
+227 silly get     'x-cache': 'HIT',
+227 silly get     'x-cache-hits': '15',
+227 silly get     'x-timer': 'S1492788694.900451,VS0,VE0',
+227 silly get     vary: 'Accept-Encoding' } ]
+228 verbose get saving commander to /Users/ajonnav/.npm/registry.npmjs.org/commander/.cache.json
+229 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+230 silly resolveWithNewModule commander@2.9.0 checking installable status
+231 silly cache add args [ 'commander@2', null ]
+232 verbose cache add spec commander@2
+233 silly cache add parsed spec Result {
+233 silly cache add   raw: 'commander@2',
+233 silly cache add   scope: null,
+233 silly cache add   escapedName: 'commander',
+233 silly cache add   name: 'commander',
+233 silly cache add   rawSpec: '2',
+233 silly cache add   spec: '>=2.0.0 <3.0.0',
+233 silly cache add   type: 'range' }
+234 silly addNamed commander@>=2.0.0 <3.0.0
+235 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for commander
+236 silly addNameRange { name: 'commander', range: '>=2.0.0 <3.0.0', hasData: false }
+237 silly mapToRegistry name commander
+238 silly mapToRegistry using default registry
+239 silly mapToRegistry registry https://registry.npmjs.org/
+240 silly mapToRegistry data Result {
+240 silly mapToRegistry   raw: 'commander',
+240 silly mapToRegistry   scope: null,
+240 silly mapToRegistry   escapedName: 'commander',
+240 silly mapToRegistry   name: 'commander',
+240 silly mapToRegistry   rawSpec: '',
+240 silly mapToRegistry   spec: 'latest',
+240 silly mapToRegistry   type: 'tag' }
+241 silly mapToRegistry uri https://registry.npmjs.org/commander
+242 verbose addNameRange registry:https://registry.npmjs.org/commander not in flight; fetching
+243 verbose get https://registry.npmjs.org/commander not expired, no request
+244 silly addNameRange number 2 { name: 'commander', range: '>=2.0.0 <3.0.0', hasData: true }
+245 silly addNameRange versions [ 'commander',
+245 silly addNameRange   [ '0.0.1',
+245 silly addNameRange     '0.0.3',
+245 silly addNameRange     '0.0.4',
+245 silly addNameRange     '0.0.5',
+245 silly addNameRange     '0.1.0',
+245 silly addNameRange     '0.2.0',
+245 silly addNameRange     '0.2.1',
+245 silly addNameRange     '0.3.0',
+245 silly addNameRange     '0.3.1',
+245 silly addNameRange     '0.3.2',
+245 silly addNameRange     '0.3.3',
+245 silly addNameRange     '0.4.0',
+245 silly addNameRange     '0.4.1',
+245 silly addNameRange     '0.4.2',
+245 silly addNameRange     '0.4.3',
+245 silly addNameRange     '0.5.0',
+245 silly addNameRange     '0.5.1',
+245 silly addNameRange     '0.6.0',
+245 silly addNameRange     '0.6.1',
+245 silly addNameRange     '0.5.2',
+245 silly addNameRange     '1.0.0',
+245 silly addNameRange     '1.0.1',
+245 silly addNameRange     '1.0.2',
+245 silly addNameRange     '1.0.3',
+245 silly addNameRange     '1.0.4',
+245 silly addNameRange     '1.0.5',
+245 silly addNameRange     '1.1.0',
+245 silly addNameRange     '1.1.1',
+245 silly addNameRange     '1.2.0',
+245 silly addNameRange     '1.3.0',
+245 silly addNameRange     '1.3.1',
+245 silly addNameRange     '1.3.2',
+245 silly addNameRange     '2.0.0',
+245 silly addNameRange     '2.1.0',
+245 silly addNameRange     '2.2.0',
+245 silly addNameRange     '2.3.0',
+245 silly addNameRange     '2.4.0',
+245 silly addNameRange     '2.5.0',
+245 silly addNameRange     '2.5.1',
+245 silly addNameRange     '2.6.0',
+245 silly addNameRange     '2.7.0',
+245 silly addNameRange     '2.7.1',
+245 silly addNameRange     '2.8.0',
+245 silly addNameRange     '2.8.1',
+245 silly addNameRange     '2.9.0' ] ]
+246 silly addNamed commander@2.9.0
+247 verbose addNamed "2.9.0" is a plain semver version for commander
+248 silly cache afterAdd commander@2.9.0
+249 verbose afterAdd /Users/ajonnav/.npm/commander/2.9.0/package/package.json not in flight; writing
+250 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+251 verbose afterAdd /Users/ajonnav/.npm/commander/2.9.0/package/package.json written
+252 silly fetchNamedPackageData graceful-readlink
+253 silly mapToRegistry name graceful-readlink
+254 silly mapToRegistry using default registry
+255 silly mapToRegistry registry https://registry.npmjs.org/
+256 silly mapToRegistry data Result {
+256 silly mapToRegistry   raw: 'graceful-readlink',
+256 silly mapToRegistry   scope: null,
+256 silly mapToRegistry   escapedName: 'graceful-readlink',
+256 silly mapToRegistry   name: 'graceful-readlink',
+256 silly mapToRegistry   rawSpec: '',
+256 silly mapToRegistry   spec: 'latest',
+256 silly mapToRegistry   type: 'tag' }
+257 silly mapToRegistry uri https://registry.npmjs.org/graceful-readlink
+258 verbose request uri https://registry.npmjs.org/graceful-readlink
+259 verbose request no auth needed
+260 info attempt registry request try #1 at 11:31:33 AM
+261 verbose etag W/"585ef90e-c1b"
+262 verbose lastModified Sat, 24 Dec 2016 22:39:10 GMT
+263 http request GET https://registry.npmjs.org/graceful-readlink
+264 http 304 https://registry.npmjs.org/graceful-readlink
+265 verbose headers { date: 'Fri, 21 Apr 2017 15:31:34 GMT',
+265 verbose headers   via: '1.1 varnish',
+265 verbose headers   'cache-control': 'max-age=300',
+265 verbose headers   etag: 'W/"585ef90e-c1b"',
+265 verbose headers   age: '191',
+265 verbose headers   connection: 'keep-alive',
+265 verbose headers   'x-served-by': 'cache-dfw1838-DFW',
+265 verbose headers   'x-cache': 'HIT',
+265 verbose headers   'x-cache-hits': '3',
+265 verbose headers   'x-timer': 'S1492788694.001222,VS0,VE0',
+265 verbose headers   vary: 'Accept-Encoding' }
+266 silly get cb [ 304,
+266 silly get   { date: 'Fri, 21 Apr 2017 15:31:34 GMT',
+266 silly get     via: '1.1 varnish',
+266 silly get     'cache-control': 'max-age=300',
+266 silly get     etag: 'W/"585ef90e-c1b"',
+266 silly get     age: '191',
+266 silly get     connection: 'keep-alive',
+266 silly get     'x-served-by': 'cache-dfw1838-DFW',
+266 silly get     'x-cache': 'HIT',
+266 silly get     'x-cache-hits': '3',
+266 silly get     'x-timer': 'S1492788694.001222,VS0,VE0',
+266 silly get     vary: 'Accept-Encoding' } ]
+267 verbose etag https://registry.npmjs.org/graceful-readlink from cache
+268 verbose get saving graceful-readlink to /Users/ajonnav/.npm/registry.npmjs.org/graceful-readlink/.cache.json
+269 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+270 silly resolveWithNewModule graceful-readlink@1.0.1 checking installable status
+271 silly cache add args [ 'graceful-readlink@>= 1.0.0', null ]
+272 verbose cache add spec graceful-readlink@>= 1.0.0
+273 silly cache add parsed spec Result {
+273 silly cache add   raw: 'graceful-readlink@>= 1.0.0',
+273 silly cache add   scope: null,
+273 silly cache add   escapedName: 'graceful-readlink',
+273 silly cache add   name: 'graceful-readlink',
+273 silly cache add   rawSpec: '>= 1.0.0',
+273 silly cache add   spec: '>=1.0.0',
+273 silly cache add   type: 'range' }
+274 silly addNamed graceful-readlink@>=1.0.0
+275 verbose addNamed ">=1.0.0" is a valid semver range for graceful-readlink
+276 silly addNameRange { name: 'graceful-readlink', range: '>=1.0.0', hasData: false }
+277 silly mapToRegistry name graceful-readlink
+278 silly mapToRegistry using default registry
+279 silly mapToRegistry registry https://registry.npmjs.org/
+280 silly mapToRegistry data Result {
+280 silly mapToRegistry   raw: 'graceful-readlink',
+280 silly mapToRegistry   scope: null,
+280 silly mapToRegistry   escapedName: 'graceful-readlink',
+280 silly mapToRegistry   name: 'graceful-readlink',
+280 silly mapToRegistry   rawSpec: '',
+280 silly mapToRegistry   spec: 'latest',
+280 silly mapToRegistry   type: 'tag' }
+281 silly mapToRegistry uri https://registry.npmjs.org/graceful-readlink
+282 verbose addNameRange registry:https://registry.npmjs.org/graceful-readlink not in flight; fetching
+283 verbose get https://registry.npmjs.org/graceful-readlink not expired, no request
+284 silly addNameRange number 2 { name: 'graceful-readlink', range: '>=1.0.0', hasData: true }
+285 silly addNameRange versions [ 'graceful-readlink', [ '1.0.0', '1.0.1' ] ]
+286 silly addNamed graceful-readlink@1.0.1
+287 verbose addNamed "1.0.1" is a plain semver version for graceful-readlink
+288 silly cache afterAdd graceful-readlink@1.0.1
+289 verbose afterAdd /Users/ajonnav/.npm/graceful-readlink/1.0.1/package/package.json not in flight; writing
+290 verbose correctMkdir /Users/ajonnav/.npm correctMkdir not in flight; initializing
+291 verbose afterAdd /Users/ajonnav/.npm/graceful-readlink/1.0.1/package/package.json written
+292 silly loadAllDepsIntoIdealTree Finishing
+293 silly loadIdealTree Finishing
+294 silly currentTree lib
+295 silly idealTree lib
+295 silly idealTree └─┬ topojson@3.0.0
+295 silly idealTree   ├── commander@2.9.0
+295 silly idealTree   ├── graceful-readlink@1.0.1
+295 silly idealTree   ├── topojson-client@3.0.0
+295 silly idealTree   ├── topojson-server@3.0.0
+295 silly idealTree   └── topojson-simplify@3.0.0
+296 silly generateActionsToTake Starting
+297 silly install generateActionsToTake
+298 warn checkPermissions Missing write access to /usr/local/lib/node_modules
+299 silly rollbackFailedOptional Starting
+300 silly rollbackFailedOptional Finishing
+301 silly runTopLevelLifecycles Finishing
+302 silly install printInstalled
+303 verbose stack Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+303 verbose stack     at Error (native)
+304 verbose cwd /Users/ajonnav/Documents/workspace/ajonnav.github.io/mapdata
+305 error Darwin 15.6.0
+306 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "topojson"
+307 error node v6.9.1
+308 error npm  v3.10.8
+309 error path /usr/local/lib/node_modules
+310 error code EACCES
+311 error errno -13
+312 error syscall access
+313 error Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+313 error     at Error (native)
+313 error  { Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+313 error     at Error (native)
+313 error   errno: -13,
+313 error   code: 'EACCES',
+313 error   syscall: 'access',
+313 error   path: '/usr/local/lib/node_modules' }
+314 error Please try running this command again as root/Administrator.
+315 verbose exit [ -13, true ]
