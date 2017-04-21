@@ -233,8 +233,8 @@
      function ready(error, us, congress) {
        if (error) throw error;
 
-       var geometryCollection = congress.objects.districts,
-           featureCollection = topojson.feature(congress, geometryCollection),
+       var geometryCollection = us.objects.states,
+           featureCollection = topojson.feature(us, geometryCollection),
            features = featureCollection.features,
            neighbors = topojson.neighbors(geometryCollection.geometries);
 
@@ -253,7 +253,7 @@
 
        svg.append("path")
            .attr("class", "border")
-           .datum(topojson.mesh(congress, geometryCollection, function(a, b) { return a !== b; }))
+           .datum(topojson.mesh(us, geometryCollection, function(a, b) { return a !== b; }))
            .attr("d", path);
 
        svg.append("path")
