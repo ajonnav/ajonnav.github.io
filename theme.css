@@ -1,0 +1,39 @@
+@-webkit-keyframes skyColor {
+	0% { background-color: #fd2f24; }
+	12.5% { background-color: #96CFEA; }
+	25% { background-color: #3A93DC; }
+	37.5%{background-color:#ffc84d}
+	50% { background-color: #fd2f24; }
+	62.5% { background-color: #131862; }
+	75% { background-color: black; }
+	87.5% { background-color: #131862; }
+}
+
+@-webkit-keyframes sunPosition {
+	0%{}
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.changingDiv {
+	min-height: 100%;
+    background-color: #fd2f24;
+    -webkit-animation-name: skyColor;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 24s;
+}
+
+.fieldSvg {
+	height:100%;
+	min-height: inherit;
+	min-width: 100%;
+}
+
+.field {
+	fill:	#00c503;
+	stroke:green;
+	stroke-width:2
+}
