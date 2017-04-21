@@ -287,7 +287,7 @@
        .data(features)
      .enter().append("path")
        .attr("d", function(d) { d.color = null; return path(d); })
-       .on("mouseover", function() { this.style.stroke = "black"; })
+       .on("mouseover", function() { this.style.stroke = "none"; })
        .on("mouseout", function() { this.style.stroke = "none"; })
        .call(d3.drag()
          .on("start", function() {
