@@ -289,7 +289,7 @@
        .attr("d", function(d) { d.color = null; return path(d); })
        .on("mouseover", function() { this.style.stroke = "black"; })
        .on("mouseout", function() { this.style.stroke = "none"; })
-       .call(d3.behavior.drag()
+       .call(d3.drag()
          .on("dragstart", dragstart)
          .on("drag", drag));
 
