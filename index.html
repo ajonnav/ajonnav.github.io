@@ -212,55 +212,62 @@
  <script src="https://unpkg.com/topojson@3"></script>
  <script>
  var width = 960,
-     height = 600;
+    height = 600;
 
- var projection = d3.geoAlbersUsa()
-     .scale(1280)
-     .translate([width / 2, height / 2]);
+var projection = d3.geoAlbersUsa()
+    .scale(1280)
+    .translate([width / 2, height / 2]);
 
- var path = d3.geoPath()
-     .projection(projection);
+var path = d3.geoPath()
+    .projection(projection);
 
- var svg = d3.select("#maincontent").append("svg")
-     .attr("width", width)
-     .attr("height", height);
+var color = d3.scale.category10().domain(d3.range(9)),
+    selectedColor = 0,
+    dragColor;
 
-     d3.queue()
-         .defer(d3.json, "./mapdata/us2016.topo.json")
-         .defer(d3.json, "./mapdata/congress.topo.json")
-         .await(ready);
+var components = color.domain().map(function() { return []; });
 
-     function ready(error, us, congress) {
-       if (error) throw error;
+var svg = d3.select("maincontent").append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
-       var geometryCollection = us.objects.states,
-           featureCollection = topojson.feature(us, geometryCollection),
-           features = featureCollection.features,
-           neighbors = topojson.neighbors(geometryCollection.geometries);
+var legend = svg.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(" + ((width - color.domain().length * 24) / 2) + ",10)")
+    .style("cursor", "pointer")
+  .selectAll("rect")
+    .data(color.domain())
+  .enter().append("rect")
+    .attr("x", function(d) { return d * 24; })
+    .attr("width", 24 - 3)
+    .attr("height", 24 - 3)
+    .style("stroke", function(d) { return d ? null : "#000"; })
+    .style("fill", color)
+    .on("click", clicklegend);
 
-       features.forEach(function(feature, i) {
-         feature.centroid = path.centroid(feature);
-         if (feature.centroid.some(isNaN)) feature.centroid = null; // off the map
-         feature.neighbors = feature.centroid ? neighbors[i]
-             .filter(function(j) { return j < i && features[j].centroid; })
-             .map(function(j) { return features[j]; }) : [];
-       });
+d3.select(self)
+    .on("keydown", keydown)
+    .node().focus();
 
-       svg.append("path")
-           .attr("class", "land")
-           .datum(topojson.feature(us, us.objects.land))
-           .attr("d", path);
+d3.json("/mbostock/raw/4090846/us.json", function(error, us) {
+  if (error) throw error;
 
-       svg.append("path")
-           .attr("class", "border")
-           .datum(topojson.mesh(us, geometryCollection, function(a, b) { return a !== b; }))
-           .attr("d", path);
+  var bisectId = d3.bisector(function(d) { return d.id; }).left;
 
-       svg.append("path")
-           .attr("class", "graph")
-           .datum(d3.merge(features.map(function(a) { return a.neighbors.map(function(b) { return [a, b]; }); })))
-           .attr("d", function(d) { return d.map(function(l) { return "M" + l[0].centroid + "L" + l[1].centroid; }).join(""); });
-     }
+  var features = topojson.feature(us, us.objects.states).features;
+
+  svg.append("path")
+      .datum(topojson.mesh(us, us.objects.states))
+      .attr("class", "background")
+      .attr("d", path);
+
+  var merge = svg.append("g")
+      .attr("class", "merge")
+    .selectAll("path")
+      .data(components)
+    .enter().append("path")
+      .style("fill", function(d, i) { return color(i); })
+      .style("stroke", function(d, i) { return d3.lab(color(i)).darker(); });
 
  </script>
 
