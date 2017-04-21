@@ -233,10 +233,10 @@
      function ready(error, us, congress) {
        if (error) throw error;
 
-    //    var geometryCollection = congress.objects.districts,
-    //        featureCollection = topojson.feature(congress, geometryCollection),
-    //        features = featureCollection.features,
-    //        neighbors = topojson.neighbors(geometryCollection.geometries);
+       var geometryCollection = congress.objects.districts,
+           featureCollection = topojson.feature(congress, geometryCollection),
+           features = featureCollection.features,
+           neighbors = topojson.neighbors(geometryCollection.geometries);
 
     //    features.forEach(function(feature, i) {
     //      feature.centroid = path.centroid(feature);
