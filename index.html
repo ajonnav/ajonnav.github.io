@@ -269,6 +269,16 @@
        .style("fill", function(d, i) { return color(i); })
        .style("stroke", function(d, i) { return d3.lab(color(i)).darker(); });
 
+       function dragstart() {
+         var feature = d3.event.sourceEvent.target.__data__;
+         if (assign(feature, dragColor = feature.color === selectedColor ? null : selectedColor)) redraw();
+       }
+
+       function drag() {
+         var feature = d3.event.sourceEvent.target.__data__;
+         if (feature && assign(feature, dragColor)) redraw();
+       }
+
    svg.append("g")
        .attr("class", "foreground")
        .style("cursor", "pointer")
@@ -289,15 +299,7 @@
 
    redraw();
 
-   function dragstart() {
-     var feature = d3.event.sourceEvent.target.__data__;
-     if (assign(feature, dragColor = feature.color === selectedColor ? null : selectedColor)) redraw();
-   }
 
-   function drag() {
-     var feature = d3.event.sourceEvent.target.__data__;
-     if (feature && assign(feature, dragColor)) redraw();
-   }
 
    function assign(feature, color) {
      if (feature.color === color) return false;
