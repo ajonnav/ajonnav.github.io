@@ -1,152 +1,265 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="static/css/darkly.css">
+</head>
  <meta charset="utf-8">
  <style>
 
- form {
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-   position: absolute;
-   left: 10px;
-   top: 10px;
+
+ .graticule {
+   fill: none;
+   stroke: #777;
+   stroke-width: 0.5px;
+   stroke-opacity: 0.5;
  }
 
- label {
-   display: block;
+ .land {
+   fill: #222;
+ }
+
+ .boundary {
+   fill: none;
+   stroke: #fff;
+   stroke-width: 0.5px;
  }
 
  </style>
- <form>
-   <label><input type="radio" name="mode" value="grouped"> Grouped</label>
-   <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
- </form>
- <svg width="960" height="500"></svg>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1>Hello, world!</h1>
+
+
+ </body>
  <script src="https://d3js.org/d3.v4.min.js"></script>
  <script>
 
- var n = 4, // The number of series.
-     m = 58; // The number of values per series.
-
- // The xz array has m elements, representing the x-values shared by all series.
- // The yz array has n elements, representing the y-values of each of the n series.
- // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
- // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
- var xz = d3.range(m),
-     yz = d3.range(n).map(function() { return bumps(m); }),
-     y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
-     yMax = d3.max(yz, function(y) { return d3.max(y); }),
-     y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
-
- var svg = d3.select("svg"),
-     margin = {top: 40, right: 10, bottom: 20, left: 10},
-     width = +svg.attr("width") - margin.left - margin.right,
-     height = +svg.attr("height") - margin.top - margin.bottom,
-     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
- var x = d3.scaleBand()
-     .domain(xz)
-     .rangeRound([0, width])
-     .padding(0.08);
-
- var y = d3.scaleLinear()
-     .domain([0, y1Max])
-     .range([height, 0]);
-
- var color = d3.scaleOrdinal()
-     .domain(d3.range(n))
-     .range(d3.schemeCategory20c);
-
- var series = g.selectAll(".series")
-   .data(y01z)
-   .enter().append("g")
-     .attr("fill", function(d, i) { return color(i); });
-
- var rect = series.selectAll("rect")
-   .data(function(d) { return d; })
-   .enter().append("rect")
-     .attr("x", function(d, i) { return x(i); })
-     .attr("y", height)
-     .attr("width", x.bandwidth())
-     .attr("height", 0);
-
- rect.transition()
-     .delay(function(d, i) { return i * 10; })
-     .attr("y", function(d) { return y(d[1]); })
-     .attr("height", function(d) { return y(d[0]) - y(d[1]); });
-
- g.append("g")
-     .attr("class", "axis axis--x")
-     .attr("transform", "translate(0," + height + ")")
-     .call(d3.axisBottom(x)
-         .tickSize(0)
-         .tickPadding(6));
-
- d3.selectAll("input")
-     .on("change", changed);
-
- var timeout = d3.timeout(function() {
-   d3.select("input[value=\"grouped\"]")
-       .property("checked", true)
-       .dispatch("change");
- }, 2000);
-
- function changed() {
-   timeout.stop();
-   if (this.value === "grouped") transitionGrouped();
-   else transitionStacked();
- }
-
- function transitionGrouped() {
-   y.domain([0, yMax]);
-
-   rect.transition()
-       .duration(500)
-       .delay(function(d, i) { return i * 10; })
-       .attr("x", function(d, i) { return x(i) + x.bandwidth() / n * this.parentNode.__data__.key; })
-       .attr("width", x.bandwidth() / n)
-     .transition()
-       .attr("y", function(d) { return y(d[1] - d[0]); })
-       .attr("height", function(d) { return y(0) - y(d[1] - d[0]); });
- }
-
- function transitionStacked() {
-   y.domain([0, y1Max]);
-
-   rect.transition()
-       .duration(500)
-       .delay(function(d, i) { return i * 10; })
-       .attr("y", function(d) { return y(d[1]); })
-       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-     .transition()
-       .attr("x", function(d, i) { return x(i); })
-       .attr("width", x.bandwidth());
- }
-
- // Returns an array of m psuedorandom, smoothly-varying non-negative numbers.
- // Inspired by Lee Byron’s test data generator.
- // http://leebyron.com/streamgraph/
- function bumps(m) {
-   var values = [], i, j, w, x, y, z;
-
-   // Initialize with uniform random values in [0.1, 0.2).
-   for (i = 0; i < m; ++i) {
-     values[i] = 0.1 + 0.1 * Math.random();
-   }
-
-   // Add five random bumps.
-   for (j = 0; j < 5; ++j) {
-     x = 1 / (0.1 + Math.random());
-     y = 2 * Math.random() - 0.5;
-     z = 10 / (0.1 + Math.random());
-     for (i = 0; i < m; i++) {
-       w = (i / m - y) * z;
-       values[i] += x * Math.exp(-w * w);
-     }
-   }
-
-   // Ensure all values are positive.
-   for (i = 0; i < m; ++i) {
-     values[i] = Math.max(0, values[i]);
-   }
-
-   return values;
- }
+     // var n = 4, // The number of series.
+     //     m = 58; // The number of values per series.
+     //
+     // // The xz array has m elements, representing the x-values shared by all series.
+     // // The yz array has n elements, representing the y-values of each of the n series.
+     // // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
+     // // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
+     // var xz = d3.range(m),
+     //     yz = d3.range(n).map(function() { return bumps(m); }),
+     //     y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
+     //     yMax = d3.max(yz, function(y) { return d3.max(y); }),
+     //     y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
+     //
+     // var svg = d3.select("svg"),
+     //     margin = {top: 40, right: 10, bottom: 20, left: 10},
+     //     width = +svg.attr("width") - margin.left - margin.right,
+     //     height = +svg.attr("height") - margin.top - margin.bottom,
+     //     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+     //
+     // var x = d3.scaleBand()
+     //     .domain(xz)
+     //     .rangeRound([0, width])
+     //     .padding(0.08);
+     //
+     // var y = d3.scaleLinear()
+     //     .domain([0, y1Max])
+     //     .range([height, 0]);
+     //
+     // var color = d3.scaleOrdinal()
+     //     .domain(d3.range(n))
+     //     .range(d3.schemeCategory20c);
+     //
+     // var series = g.selectAll(".series")
+     //   .data(y01z)
+     //   .enter().append("g")
+     //     .attr("fill", function(d, i) { return color(i); });
+     //
+     // var rect = series.selectAll("rect")
+     //   .data(function(d) { return d; })
+     //   .enter().append("rect")
+     //     .attr("x", function(d, i) { return x(i); })
+     //     .attr("y", height)
+     //     .attr("width", x.bandwidth())
+     //     .attr("height", 0);
+     //
+     // rect.transition()
+     //     .delay(function(d, i) { return i * 10; })
+     //     .attr("y", function(d) { return y(d[1]); })
+     //     .attr("height", function(d) { return y(d[0]) - y(d[1]); });
+     //
+     // g.append("g")
+     //     .attr("class", "axis axis--x")
+     //     .attr("transform", "translate(0," + height + ")")
+     //     .call(d3.axisBottom(x)
+     //         .tickSize(0)
+     //         .tickPadding(6));
+     //
+     // d3.selectAll("input")
+     //     .on("change", changed);
+     //
+     // var timeout = d3.timeout(function() {
+     //   d3.select("input[value=\"grouped\"]")
+     //       .property("checked", true)
+     //       .dispatch("change");
+     // }, 2000);
+     //
+     // function changed() {
+     //   timeout.stop();
+     //   if (this.value === "grouped") transitionGrouped();
+     //   else transitionStacked();
+     // }
+     //
+     // function transitionGrouped() {
+     //   y.domain([0, yMax]);
+     //
+     //   rect.transition()
+     //       .duration(500)
+     //       .delay(function(d, i) { return i * 10; })
+     //       .attr("x", function(d, i) { return x(i) + x.bandwidth() / n * this.parentNode.__data__.key; })
+     //       .attr("width", x.bandwidth() / n)
+     //     .transition()
+     //       .attr("y", function(d) { return y(d[1] - d[0]); })
+     //       .attr("height", function(d) { return y(0) - y(d[1] - d[0]); });
+     // }
+     //
+     // function transitionStacked() {
+     //   y.domain([0, y1Max]);
+     //
+     //   rect.transition()
+     //       .duration(500)
+     //       .delay(function(d, i) { return i * 10; })
+     //       .attr("y", function(d) { return y(d[1]); })
+     //       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+     //     .transition()
+     //       .attr("x", function(d, i) { return x(i); })
+     //       .attr("width", x.bandwidth());
+     // }
+     //
+     // // Returns an array of m psuedorandom, smoothly-varying non-negative numbers.
+     // // Inspired by Lee Byron’s test data generator.
+     // // http://leebyron.com/streamgraph/
+     // function bumps(m) {
+     //   var values = [], i, j, w, x, y, z;
+     //
+     //   // Initialize with uniform random values in [0.1, 0.2).
+     //   for (i = 0; i < m; ++i) {
+     //     values[i] = 0.1 + 0.1 * Math.random();
+     //   }
+     //
+     //   // Add five random bumps.
+     //   for (j = 0; j < 5; ++j) {
+     //     x = 1 / (0.1 + Math.random());
+     //     y = 2 * Math.random() - 0.5;
+     //     z = 10 / (0.1 + Math.random());
+     //     for (i = 0; i < m; i++) {
+     //       w = (i / m - y) * z;
+     //       values[i] += x * Math.exp(-w * w);
+     //     }
+     //   }
+     //
+     //   // Ensure all values are positive.
+     //   for (i = 0; i < m; ++i) {
+     //     values[i] = Math.max(0, values[i]);
+     //   }
+     //
+     //   return values;
+     // }
 
  </script>
+ <script src="static/js/jquery-3.2.1.min.js"></script>
+ <!-- Latest compiled and minified JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <script src="https://d3js.org/d3-array.v1.min.js"></script>
+ <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+ <script src="https://d3js.org/topojson.v1.min.js"></script>
+ <script src="https://unpkg.com/topojson@3"></script>
+ <script>
+ var width = 960,
+     height = 600;
+
+ var projection = d3.geoAlbersUsa()
+     .scale(1280)
+     .translate([width / 2, height / 2]);
+
+ var path = d3.geoPath()
+     .projection(projection);
+
+ var svg = d3.select("body").append("svg")
+     .attr("width", width)
+     .attr("height", height);
+
+     d3.queue()
+         .defer(d3.json, "/Users/ajonnav/Documents/workspace/ajonnav.github.io/mapdata/us2016.topo.json")
+         .defer(d3.json, "./mapdata/congress.topo.json")
+         .await(ready);
+
+     function ready(error, us, congress) {
+       if (error) throw error;
+
+       var geometryCollection = congress.objects.districts,
+           featureCollection = topojson.feature(congress, geometryCollection),
+           features = featureCollection.features,
+           neighbors = topojson.neighbors(geometryCollection.geometries);
+
+       features.forEach(function(feature, i) {
+         feature.centroid = path.centroid(feature);
+         if (feature.centroid.some(isNaN)) feature.centroid = null; // off the map
+         feature.neighbors = feature.centroid ? neighbors[i]
+             .filter(function(j) { return j < i && features[j].centroid; })
+             .map(function(j) { return features[j]; }) : [];
+       });
+
+       svg.append("path")
+           .attr("class", "land")
+           .datum(topojson.feature(us, us.objects.land))
+           .attr("d", path);
+
+       svg.append("path")
+           .attr("class", "border")
+           .datum(topojson.mesh(congress, geometryCollection, function(a, b) { return a !== b; }))
+           .attr("d", path);
+
+       svg.append("path")
+           .attr("class", "graph")
+           .datum(d3.merge(features.map(function(a) { return a.neighbors.map(function(b) { return [a, b]; }); })))
+           .attr("d", function(d) { return d.map(function(l) { return "M" + l[0].centroid + "L" + l[1].centroid; }).join(""); });
+     }
+
+ </script>
+
+</html>
